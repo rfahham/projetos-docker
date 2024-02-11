@@ -1,11 +1,5 @@
 # Use the official Nginx base image
-FROM nginx:latest
-
-# Remove the default Nginx configuration
-# RUN rm /etc/nginx/conf.d/default.conf
-
-# Copy your custom Nginx configuration file
-# COPY nginx.conf /etc/nginx/conf.d/
+FROM nginx
 
 # Copy your web content to the default Nginx public directory
 COPY index.html /usr/share/nginx/html/index.html

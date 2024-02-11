@@ -1,7 +1,7 @@
 #!/usr/bin/make
 
-NAME = "workon"
-VERSION=v2.0.0
+NAME = workon
+VERSION=v2.0.1
 
 ########################################################
 # 					DOCKERHUB 						   #
@@ -33,10 +33,12 @@ build:
 	DOCKER_BUILDKIT=1
 	docker build -t docker.artifactory.globoi.com/qa2/${NAME}:${VERSION} .
 
+push:
+	docker image push docker.artifactory.globoi.com/qa2/${NAME}:${VERSION}
+	
 build-push: build
 	DOCKER_BUILDKIT=1
 	docker build -t docker.artifactory.globoi.com/qa2/${NAME}:${VERSION} .
 	docker image push docker.artifactory.globoi.com/qa2/${NAME}:${VERSION}
 
-push:
-	docker image push docker.artifactory.globoi.com/qa2/${NAME}:${VERSION}
+
