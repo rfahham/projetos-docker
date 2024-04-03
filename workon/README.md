@@ -1,5 +1,9 @@
 # Criando workon
 
+## Acessar a pasta da versão
+
+Nesta pasta contém o arquivo Dockerfile e a versão do index.html
+
 ## build
 
 ```bash
@@ -11,31 +15,31 @@ docker build -t rfahham/workon:1.0 .
 ```bash
 docker images
 
-REPOSITORY        TAG   IMAGE ID       CREATED          SIZE
-rfahham/workon    1.0   d0306f7985da   52 seconds ago   177MB
+REPOSITORY        TAG     IMAGE ID       CREATED          SIZE
+rfahham/workon    1.0.0   d0306f7985da   52 seconds ago   177MB
 ```
 
 ## Executando a imagem
 
 ```bash
-docker container run --name workon -p 80:80 rfahham/workon:2.0.0
+docker container run --name workon -p 80:80 rfahham/workon:<indicar a versão>
 ```
 
 ## Tagueando a imagem
 
 ```bash
 docker tag <imagem_id> <sua_conta>/<nome_image>:tag
-docker tag d0306f7985da rfahham/workon:1.0
+docker tag 3b781fe0e1f4 rfahham/workon:<indicar a versão>
 ```
 
 ## Construindo a imagem (dockerhub)
 
 ```bash
 docker push <nome_da_sua_conta>/sua_imagem:tag
-docker push rfahham/workon:1.0
+docker push rfahham/workon:<indicar a versão>
 ```
 
-## Listar os Container
+## Listar os Containers
 
 ```bash
 docker ps -a
