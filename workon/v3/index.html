@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <title>HEALTHCHECK</title>
+
+        <style>
+        body {
+                background-color: rgb(39, 40, 40);
+                font-size: 20px;
+                color: darkgray;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        }
+
+        h1::after {
+                content: '!';
+                margin-left: 5px;
+                opacity: 1;
+                animation: pisca .8s infinite;
+        }
+
+        @keyframes pisca {
+                0%, 100% {opacity: 1;}
+                50% {opacity: 0;} 
+        }
+        </style>
+</head>
+<body>
+        <h1>WORKING</h1>
+        <script>
+                function typeWriter(elemento) {
+                        const textoArray = elemento.innerHTML.split('');
+                        elemento.innerHTML = '';
+                        textoArray.forEach((letra, i) => {
+                                setTimeout(() => elemento.innerHTML += letra, 100 * i);
+                        });
+                }
+
+                const titulo = document.querySelector('h1');
+                typeWriter(titulo);
+
+        </script>
+</body>
+</html>
